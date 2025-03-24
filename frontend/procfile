@@ -1,0 +1,1 @@
+web: java -jar demo-springboot/target/demo-springboot.jar
