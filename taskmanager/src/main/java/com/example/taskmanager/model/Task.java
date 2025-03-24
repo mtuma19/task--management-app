@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,6 +29,18 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "user_id") // Foreign key
     private User user;  // Link task to user
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    @OneToMany(mappedBy = "task")
+    private List<Comment> comments;
+
 
     public Long getId() {
         return id;
