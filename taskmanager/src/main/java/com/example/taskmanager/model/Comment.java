@@ -10,8 +10,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String text;
-    private LocalDateTime createdAt;
+    private String text;  // Comment text
+    private LocalDateTime createdAt; // Time when the comment was created
 
     @ManyToOne
     @JoinColumn(name = "user_id")  // Foreign key to User

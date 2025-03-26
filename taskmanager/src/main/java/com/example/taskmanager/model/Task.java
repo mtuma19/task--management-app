@@ -30,6 +30,8 @@ public class Task {
     @JoinColumn(name = "user_id") // Foreign key
     private User user;  // Link task to user
 
+    @OneToMany(mappedBy = "Comment")
+    private List<Comment> comments;
     public List<Comment> getComments() {
         return comments;
     }
@@ -38,8 +40,7 @@ public class Task {
         this.comments = comments;
     }
 
-    @OneToMany(mappedBy = "task")
-    private List<Comment> comments;
+
 
 
     public Long getId() {

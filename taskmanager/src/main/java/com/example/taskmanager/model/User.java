@@ -18,16 +18,6 @@ public class User {
     private String name;
     private String surname;
 
-    @OneToMany(mappedBy = "task")
-    private List<Comment> comments;
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
 
     public Long getId() {
         return id;
